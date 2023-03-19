@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="main_text" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.laboras.HelloController">
+   <children>
+      <Label layoutX="14.0" layoutY="52.0" prefHeight="18.0" prefWidth="162.0" text="Paskolos suma: ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="paskola_id" layoutX="14.0" layoutY="87.0" />
+      <Label layoutX="14.0" layoutY="122.0" prefHeight="18.0" prefWidth="162.0" text="Terminas">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="152.0" prefHeight="26.0" prefWidth="58.0" text="Metai: ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="152.0" prefHeight="26.0" prefWidth="58.0" text="Mėn:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="metai_id" layoutX="15.0" layoutY="191.0" prefHeight="26.0" prefWidth="58.0" />
+      <TextField fx:id="men_id" layoutX="105.0" layoutY="191.0" prefHeight="26.0" prefWidth="58.0" />
+      <Label layoutX="14.0" layoutY="239.0" prefHeight="18.0" prefWidth="162.0" text="Metinis procentas:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="procentas_id" layoutX="14.0" layoutY="265.0" />
+      <RadioButton layoutX="15.0" layoutY="305.0" mnemonicParsing="false" onAction="#linear" text="Linijinis">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="105.0" layoutY="305.0" mnemonicParsing="false" onAction="#anuiteto" text="Anuiteto">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Button layoutX="13.0" layoutY="589.0" mnemonicParsing="false" onAction="#submit" text="Išsaugoti">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="main_label" layoutX="11.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Įveskite duomenis:" wrappingWidth="187.99996337890622">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="delayText" layoutX="18.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jei norite atidėjimo veskite atidėjimo duomenis:" wrappingWidth="124.53670883178711">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Label layoutX="14.0" layoutY="399.0" prefHeight="30.0" prefWidth="90.0" text="Kiek metų atidėt:" />
+      <Label layoutX="16.0" layoutY="436.0" prefHeight="30.0" prefWidth="113.0" text="Kiek mėnesių atidėt:" />
+      <TextField fx:id="metaiAtidejimas" layoutX="134.0" layoutY="401.0" prefHeight="26.0" prefWidth="71.0" />
+      <TextField fx:id="menuoAtidejimas" layoutX="134.0" layoutY="438.0" prefHeight="26.0" prefWidth="71.0" />
+      <Label layoutX="18.0" layoutY="474.0" text="Atidėjimo procentas:" />
+      <TextField fx:id="procentasAtidejimas" layoutX="134.0" layoutY="469.0" prefHeight="26.0" prefWidth="71.0" />
+      <Label layoutX="16.0" layoutY="504.0" prefHeight="20.0" prefWidth="90.0" text="Filtras">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="18.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuo kada iki kada ( mėnesiais ): " wrappingWidth="124.53670883178717" />
+      <TextField fx:id="f_nuo" layoutX="147.0" layoutY="514.0" prefHeight="26.0" prefWidth="71.0" />
+      <TextField fx:id="f_iki" layoutX="147.0" layoutY="558.0" prefHeight="26.0" prefWidth="71.0" />
+      <Button layoutX="778.0" layoutY="605.0" mnemonicParsing="false" onAction="#excel" prefHeight="26.0" prefWidth="75.0" text="Exportuoti" />
+      <TableView fx:id="table_id" layoutX="234.0" layoutY="6.0" prefHeight="299.0" prefWidth="634.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <LineChart fx:id="outputChart" layoutX="236.0" layoutY="298.0" prefHeight="322.0" prefWidth="634.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="274.0" layoutY="606.0" mnemonicParsing="false" onAction="#clear" text="Valyti grafiką" />
+   </children>
+</AnchorPane>
